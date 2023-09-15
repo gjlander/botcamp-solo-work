@@ -1,0 +1,122 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+    background: #007398;
+    color: white;
+    padding: 0 30px;
+}
+
+.block {
+    text-align: center;
+    background: white;
+    border-radius: 3px;
+    padding: 20px;
+    color: black;
+    margin: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.goal {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+ul li {
+    padding: 10px;
+    text-align: left;
+}
+
+h4 {
+    display: inline-block;
+}
+
+a {
+    color: cornflowerblue;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid cornflowerblue;
+    padding: 5px 10px;
+    margin: 20px;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+.inputs-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    margin: 1rem 0;
+}
+
+input {
+    padding: 0.3rem;
+    width: 50%;
+}
+
+textarea {
+    resize: none;
+    width: 50%;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+button {
+    background: #007398;
+    color: white;
+    font-weight: bold;
+    padding: 10px 10px;
+    margin: 20px 20px;
+    cursor: pointer;
+    border: 1px solid #007398;
+    border-radius: 5px;
+}
+
+#allDiaryEntries {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.diaryEntry {
+    background: #007398;
+    color: white;
+    border-radius: 10px;
+    max-width: 300px;
+    padding: 0.5rem 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.diaryEntry p {
+    overflow-wrap: break-word;
+}
+.diaryEntry p:first-child {
+    text-align: right;
+    margin: 0;
+}
+
+.diaryEntry p:not(:first-child) {
+    line-height: 1.6;
+}
+
+.diaryEntry h3 {
+    margin: 0.5em;
+}
+
+.diaryEntry i {
+    display: block;
+    background-color: white;
+    color: #007398;
+    text-decoration: bold;
+    margin-top: 0.5em;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+}
