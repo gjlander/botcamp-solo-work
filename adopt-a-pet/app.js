@@ -1,7 +1,7 @@
 const petList = require("./petList");
 const express = require("express");
 const app = express();
-const port = 24601;
+const port = process.env.PORT || 24601;
 
 app.route("/").get((req, res) => {
     return res.send(`<h1>Adopt a pet!</h1>
@@ -15,17 +15,20 @@ app.route("/").get((req, res) => {
 
 app.route("/animals/:pet_type").get((req, res) => {
     const petType = req.params.pet_type;
-    console.log(petList[petType]);
-    return res.send(`<h1>List of ${req.params.pet_type}:</h1>
+    // console.log(petList[petType][0].name);
+    return res.send(`<h1>List of ${petType}:</h1>
     <ul>
     ${
         petList[petType] &&
-        petList[petType].map(
-            (pet, i) =>
-                `<li><a href=${`/animals/${petType}/${i + 1}`}>${
-                    pet.name
-                }</a></li>`
-        )
+        petList[petType]
+            .map(
+                (pet, i) =>
+                    `<li>
+                <a href=${`/animals/${petType}/${i + 1}`}>
+                ${pet.name}</a>
+                </li>`
+            )
+            .join("")
     }
     </ul>`);
 });
@@ -41,9 +44,10 @@ app.route("/animals/:pet_type/:pet_id").get((req, res) => {
     <ul>
     <li>Breed: ${pet.breed}</li>
     <li>Age: ${pet.age} years old</li>
+    </ul>
     `);
 });
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
+    console.log(`Adopt a pet listening on port ${port}`);
 });
