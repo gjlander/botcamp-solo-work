@@ -1,0 +1,22 @@
+{
+    "name": "express_with_mongodb",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "dev": "nodemon -r dotenv/config index.js dotenv_config_path=./.env.local",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "chalklog": "^1.1.2",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "mongodb": "^6.2.0",
+        "mongoose": "^8.0.0",
+        "nodemon": "^3.0.1"
+    }
+}

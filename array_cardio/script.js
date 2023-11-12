@@ -379,3 +379,47 @@ console.log(moviesWithAge);
 // Exercise 9 - Array.prototype.findIndex()
 // Find the index of the first movie directed by Francis Ford Coppola
 // Expected output: 2
+
+// declare the function
+const shuffle = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+};
+
+// Usage
+const myArray = [
+    "Garrett",
+    "Nora",
+    "Eugen",
+    "Gwen",
+    "Louis",
+    "Sabine",
+    "Peter",
+    "Angela",
+    "Romana",
+];
+const shuffledArray = shuffle(myArray);
+console.log("shuffledArray", shuffledArray);
+
+const matches = [
+    { giver: "Garrett" },
+    { giver: "Nora" },
+    { giver: "Eugen" },
+    { giver: "Gwen" },
+    { giver: "Louis" },
+    { giver: "Sabine" },
+    { giver: "Peter" },
+    { giver: "Angela" },
+    { giver: "Romana" },
+];
+
+const pairs = matches.map((match, i) => {
+    const receiver = shuffledArray[i];
+    return { ...match, receiver: receiver };
+    // console.log(match);
+});
+
+console.log(pairs);
